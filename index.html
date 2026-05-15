@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highly Ambitious Barber Studio — Minooka, IL · Premium Cuts &amp; Hot Shaves</title>
+<meta name="description" content="Highly Ambitious Barber Studio at 401 W Mondamin St, Minooka IL. Skilled barbers, hot towel shaves, beard work, premium men's grooming. Book online.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#1f1f1f;
+  --bg-deep:#161616;
+  --surface:#262626;
+  --surface-hi:#2e2e2e;
+  --champagne:#d4af87;
+  --champagne-bright:#e9c8a3;
+  --paper:#ececec;
+  --paper-soft:#c4c4c4;
+  --muted:#8e8e8e;
+  --line:rgba(212,175,135,.18);
+  --font-display:'Tenor Sans',Georgia,serif;
+  --font-body:'Mulish',sans-serif;
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:300}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(31,31,31,.96);border-bottom-color:var(--line);backdrop-filter:blur(10px)}
+.brand{font-family:var(--font-display);font-size:1.05rem;color:var(--paper);letter-spacing:.4em;text-transform:uppercase}
+.brand b{color:var(--champagne);font-weight:normal}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--paper-soft);transition:color .2s}
+.nav-links a:hover{color:var(--champagne)}
+.cta{background:transparent;color:var(--champagne);padding:11px 22px;font-size:.7rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;transition:background .2s,color .2s;border:1px solid var(--champagne);cursor:pointer;font-family:var(--font-body)}
+.cta:hover{background:var(--champagne);color:var(--bg)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--paper);margin:5px 0}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;background:var(--bg)}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.22}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(.95)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(31,31,31,.35) 0%,rgba(31,31,31,.95) 75%);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:840px}
+.hero-mark{font-family:var(--font-display);font-size:.85rem;letter-spacing:.6em;color:var(--champagne);margin-bottom:2rem;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:1rem}
+.hero-mark::before,.hero-mark::after{content:"";display:inline-block;width:40px;height:1px;background:var(--champagne)}
+.hero-title{font-family:var(--font-display);font-size:clamp(3rem,8.5vw,6.4rem);line-height:1.06;letter-spacing:.04em;margin-bottom:1.7rem;color:var(--paper);text-transform:uppercase;font-weight:normal}
+.hero-title em{font-style:italic;color:var(--champagne);text-transform:none}
+.hero-sub{font-size:1.08rem;color:var(--paper-soft);line-height:1.85;max-width:560px;margin:0 auto 2.6rem;font-weight:300}
+.hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--champagne);color:var(--bg);padding:15px 38px;font-size:.74rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;transition:all .2s;border:none;cursor:pointer;font-family:var(--font-body)}
+.btn-primary:hover{background:var(--champagne-bright);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--paper);color:var(--paper);padding:14px 36px;font-size:.74rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;transition:all .2s;background:transparent}
+.btn-outline:hover{background:var(--paper);color:var(--bg)}
+
+/* SECTION */
+.sec{padding:7rem 2rem;background:var(--bg)}
+.sec-inner{max-width:1080px;margin:0 auto}
+.sec-pre{font-family:var(--font-display);font-size:.78rem;letter-spacing:.5em;text-transform:uppercase;color:var(--champagne);margin-bottom:1.2rem}
+.sec-title{font-family:var(--font-display);font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.1;letter-spacing:.04em;margin-bottom:1.6rem;color:var(--paper);text-transform:uppercase;font-weight:normal}
+.sec-title em{font-style:italic;color:var(--champagne);text-transform:none}
+.sec-desc{color:var(--paper-soft);font-size:1.02rem;line-height:1.95;max-width:600px;font-weight:300}
+.sec-center{text-align:center}
+.sec-center .sec-desc{margin:0 auto 3.5rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:5rem;align-items:center}
+.about-img-wrap{position:relative;aspect-ratio:3/4}
+.about-img-wrap::before{content:"";position:absolute;inset:1.6rem -1.6rem -1.6rem 1.6rem;border:1px solid var(--champagne);z-index:1}
+.about-img{position:relative;width:100%;height:100%;overflow:hidden;z-index:2}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) contrast(1.05)}
+.about-quote{font-family:var(--font-display);font-size:1.55rem;color:var(--champagne);font-style:italic;border-left:1px solid var(--champagne);padding-left:1.3rem;margin-top:2rem;line-height:1.4}
+
+/* SERVICES */
+.services-bg{background:var(--bg-deep)}
+.svc-list{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.svc-row{padding:2rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1.4rem;transition:padding .25s}
+.svc-row:hover{padding-left:.6rem;padding-right:.6rem}
+.svc-row:nth-child(odd){padding-right:2.5rem;border-right:1px solid var(--line)}
+.svc-row:nth-child(even){padding-left:2.5rem}
+.svc-row-l{flex:1}
+.svc-name{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.06em;margin-bottom:.5rem;color:var(--paper);text-transform:uppercase;font-weight:normal}
+.svc-desc{font-size:.9rem;color:var(--muted);line-height:1.65;font-weight:300}
+.svc-price{font-family:var(--font-display);font-size:1.3rem;color:var(--champagne);letter-spacing:.06em;white-space:nowrap;align-self:flex-start}
+
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}
+.testi-card{padding:2.5rem 0;border-top:1px solid var(--champagne)}
+.testi-mark{font-family:var(--font-display);font-size:3rem;color:var(--champagne);line-height:.5;margin-bottom:.7rem;letter-spacing:0}
+.testi-text{color:var(--paper);font-size:1.05rem;line-height:1.8;margin-bottom:1.3rem;font-style:italic;font-weight:300}
+.testi-author{font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+
+/* CONTACT */
+.contact-bg{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;max-width:920px;margin:3rem auto 0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ci{padding:2.4rem 1.6rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left}
+.ci-num{font-family:var(--font-display);color:var(--champagne);font-size:.85rem;letter-spacing:.5em;margin-bottom:.6rem;text-transform:uppercase}
+.ci-label{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:.6rem}
+.ci-value{font-size:.98rem;color:var(--paper);line-height:1.55;font-weight:300}
+.ci-value a{color:var(--champagne);border-bottom:1px solid var(--champagne)}
+.map-wrap{margin-top:4rem;max-width:920px;margin-left:auto;margin-right:auto;height:340px;border:1px solid var(--line)}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05) brightness(.78)}
+
+/* FOOTER */
+.footer{background:var(--bg-deep);color:var(--paper);padding:3rem 2rem;text-align:center;border-top:1px solid var(--line)}
+.f-brand{font-family:var(--font-display);font-size:1rem;letter-spacing:.5em;margin-bottom:.6rem;text-transform:uppercase}
+.f-brand b{color:var(--champagne);font-weight:normal}
+.f-tag{color:var(--muted);font-size:.78rem;letter-spacing:.18em;margin-bottom:1.2rem;text-transform:uppercase}
+.f-copy{font-size:.7rem;color:var(--muted);opacity:.7;letter-spacing:.08em}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .cta{display:none}
+  .menu-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg-deep);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--line)}
+  .hero{padding:5rem 1.4rem 3rem}
+  .about-grid{grid-template-columns:1fr;gap:3.5rem}
+  .svc-list{grid-template-columns:1fr}
+  .svc-row:nth-child(odd){padding-right:0;border-right:none}
+  .svc-row:nth-child(even){padding-left:0}
+  .sec{padding:4.5rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="brand">Highly <b>Ambitious</b></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="https://www.fresha.com/lvp/highly-ambitious-barber-studio-west-mondamin-street-minooka-A7lZkV" target="_blank" rel="noopener" class="cta">Book Online</a>
+  <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <!-- REPLACE WITH REAL PHOTO -->
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1600&q=80" alt="Highly Ambitious Barber Studio">
+  </div>
+  <div class="hero-content">
+    <div class="hero-mark fade-up">Minooka · W Mondamin Street</div>
+    <h1 class="hero-title fade-up d1">Modern Barbering.<br><em>Quiet confidence.</em></h1>
+    <p class="hero-sub fade-up d2">Highly Ambitious Barber Studio is Minooka's appointment-first studio for men who care about the cut. Skilled barbers, hot towel work, and a chair that takes its time.</p>
+    <div class="hero-btns fade-up d3">
+      <a href="https://www.fresha.com/lvp/highly-ambitious-barber-studio-west-mondamin-street-minooka-A7lZkV" target="_blank" rel="noopener" class="btn-primary">Book a Chair</a>
+      <a href="#services" class="btn-outline">Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-inner about-grid">
+    <div class="about-img-wrap fade-up">
+      <div class="about-img">
+        <!-- REPLACE WITH REAL PHOTO -->
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80" alt="Inside Highly Ambitious">
+      </div>
+    </div>
+    <div>
+      <div class="sec-pre fade-up">The Studio</div>
+      <h2 class="sec-title fade-up d1">A Studio<br>For Men <em>Who Care.</em></h2>
+      <p class="sec-desc fade-up d2">Highly Ambitious is a barber studio in the literal sense — a quiet, focused space where the cut is the only thing on the table. Skilled barbers, careful work, and an atmosphere that treats every appointment like it matters.</p>
+      <p class="sec-desc fade-up d3" style="margin-top:1rem">From precision fades and lineups to full hot-towel shaves and beard work, we believe a great cut is an act of detail — and we take the time it deserves.</p>
+      <div class="about-quote fade-up d4">"Ambition is in the details. Every line, every blend."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec services-bg" id="services">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">The Menu</div>
+      <h2 class="sec-title fade-up d1">Services</h2>
+      <p class="sec-desc fade-up d2">Book online any time — appointments preferred, walk-ins as availability allows.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row fade-up"><div class="svc-row-l"><div class="svc-name">Signature Cut</div><div class="svc-desc">Classic men's haircut, finished sharp.</div></div><div class="svc-price">Book</div></div>
+      <div class="svc-row fade-up d1"><div class="svc-row-l"><div class="svc-name">Skin Fade</div><div class="svc-desc">Razor-blended fade taken to the skin.</div></div><div class="svc-price">Book</div></div>
+      <div class="svc-row fade-up d2"><div class="svc-row-l"><div class="svc-name">Beard Trim</div><div class="svc-desc">Shape, edge, hot-towel finish.</div></div><div class="svc-price">Book</div></div>
+      <div class="svc-row fade-up d3"><div class="svc-row-l"><div class="svc-name">Hot Towel Shave</div><div class="svc-desc">Straight razor, hot lather, the full ritual.</div></div><div class="svc-price">Book</div></div>
+      <div class="svc-row fade-up d2"><div class="svc-row-l"><div class="svc-name">Head Shave</div><div class="svc-desc">Clean head shave with straight razor finish.</div></div><div class="svc-price">Book</div></div>
+      <div class="svc-row fade-up d3"><div class="svc-row-l"><div class="svc-name">The Combo</div><div class="svc-desc">Cut + beard + hot towel cleanup.</div></div><div class="svc-price">Book</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Reviews</div>
+      <h2 class="sec-title fade-up d1">A Standard <em>You Can Feel.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up"><div class="testi-mark">"</div><p class="testi-text">Friendly, welcoming atmosphere, and a cut so clean I had to look twice in the mirror. This is what a barber studio should feel like.</p><div class="testi-author">— Minooka Regular</div></div>
+      <div class="testi-card fade-up d1"><div class="testi-mark">"</div><p class="testi-text">Skilled barbers who take the time. The hot towel shave alone is worth driving out for.</p><div class="testi-author">— Out-of-Towner</div></div>
+      <div class="testi-card fade-up d2"><div class="testi-mark">"</div><p class="testi-text">Best fade I've had in years. Booked through Fresha, walked in, walked out feeling sharp.</p><div class="testi-author">— First-Timer</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact-bg" id="visit">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Visit</div>
+      <h2 class="sec-title fade-up d1">Book a <em>Chair.</em></h2>
+      <p class="sec-desc fade-up d2" style="margin:0 auto;max-width:520px">West Mondamin Street, Minooka. Online booking preferred.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="ci fade-up"><div class="ci-num">i.</div><div class="ci-label">Address</div><div class="ci-value">401 W Mondamin St<br>Minooka, IL 60447</div></div>
+      <div class="ci fade-up d1"><div class="ci-num">ii.</div><div class="ci-label">Book Online</div><div class="ci-value"><a href="https://www.fresha.com/lvp/highly-ambitious-barber-studio-west-mondamin-street-minooka-A7lZkV" target="_blank" rel="noopener">Fresha →</a></div></div>
+      <div class="ci fade-up d2"><div class="ci-num">iii.</div><div class="ci-label">Hours</div><div class="ci-value" style="font-size:.86rem">By appointment<br>See Fresha for openings</div></div>
+      <div class="ci fade-up d3"><div class="ci-num">iv.</div><div class="ci-label">Payment</div><div class="ci-value" style="font-size:.86rem">Cash, cards<br>Tips appreciated</div></div>
+    </div>
+    <div class="map-wrap fade-up"><iframe src="https://www.google.com/maps?q=401+W+Mondamin+St,+Minooka,+IL+60447&output=embed" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="f-brand">Highly <b>Ambitious</b></div>
+  <div class="f-tag">Minooka · Barber Studio</div>
+  <div class="f-copy">© 2026 Highly Ambitious Barber Studio · 401 W Mondamin St · Minooka, IL</div>
+</footer>
+
+<script>
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('open')}})});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(function(el){o.observe(el)});
+</script>
+
+</body>
+</html>
