@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://highly-ambitious-barber-studio.vercel.app/sitemap.xml
